@@ -34,4 +34,8 @@ public class HomePage extends Utils {
         clickOnElement(By.linkText("Jewelry"));
 
     }
+    public void clickOnCategoryLinks(String category){
+        driver.findElement(By.linkText(category)).click();
+
+    }
 }

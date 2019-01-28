@@ -243,4 +243,7 @@ public class Utils extends BasePage {
         }
 
     }
+    public static void assertCurrentUrl(String url){
+        Assert.assertTrue(driver.getCurrentUrl().equals(url));
+    }
 }

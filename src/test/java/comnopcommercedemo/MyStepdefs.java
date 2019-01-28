@@ -1,5 +1,6 @@
 package comnopcommercedemo;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -63,32 +64,52 @@ public class MyStepdefs extends Utils {
     public void userShouldBeAbleToNavigateOnDigitalDownloadsPage() {
         assertPage.toVerifyDigitalDownloadsPage();
     }
+
     //Test steps for Electronic page
     @When("^user click on electronic category$")
     public void userClickOnElectronicCategory() {
         homePage.clickOnElectronicsCategory();
     }
+
     @Then("^user should be abl eto navigate on electronic page$")
     public void userShouldBeAblEtoNavigateOnElectronicPage() {
         assertPage.toVerifyElectronicsPage();
     }
+
     //Test steps for gift card page
     @When("^user click on gift card category$")
     public void userClickOnGiftCardCategory() {
-    homePage.clickOnGiftCardsCategory();
+        homePage.clickOnGiftCardsCategory();
     }
+
     @Then("^user should dbe able to navigate on gift card page$")
     public void userShouldDbeAbleToNavigateOnGiftCardPage() {
         assertPage.toVerifyGiftCardsPage();
     }
+
     //Test steps for Jewelery page
     @When("^user click on jewelry category$")
     public void userClickOnJewelryCategory() {
-    homePage.clickOnJewelryCategory();
+        homePage.clickOnJewelryCategory();
     }
 
     @Then("^user should be abl eto navigate on jewelry page$")
     public void userShouldBeAblEtoNavigateOnJewelryPage() {
         assertPage.toVerifyJewelryPage();
     }
+
+
+    @When("^user click on the \"([^\"]*)\"link$")
+    public void userClickOnTheLink(String category)  {
+        homePage.clickOnCategoryLinks(category);
+
+    }
+
+    @Then("^user should be directed to \"([^\"]*)\" successfully$")
+    public void userShouldBeDirectedToSuccessfully(String url)  {
+        Utils.assertCurrentUrl(url);
+
+
+    }
 }
+
